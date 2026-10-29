@@ -1,24 +1,26 @@
-[gd_scene load_steps=4 format=3]
+[gd_scene format=3 uid="uid://3gcn8gg4441b"]
 
-[ext_resource type="Script" path="res://scripts/loot_item.gd" id="1_loot_script"]
-[ext_resource type="Texture2D" path="res://assets/Dungeon_of_Logic_Split_Sprites/01_Auto_Cutouts/05_Equipment_and_Accessories/05_Equipment_and_Accessories_sprite_001.png" id="2_item_tex"]
+[ext_resource type="Script" uid="uid://cw6r4vrjw663c" path="res://scripts/loot_item.gd" id="1_loot_script"]
+[ext_resource type="Texture2D" uid="uid://dvi4ccr34wbvm" path="res://assets/Dungeon_of_Logic_Split_Sprites/01_Auto_Cutouts/05_Equipment_and_Accessories/05_Equipment_and_Accessories_sprite_002.png" id="2_bafq7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_loot"]
 radius = 14.0
 
-[node name="LootItem" type="Area2D"]
+[node name="LootItem" type="Area2D" unique_id=558930400]
 collision_layer = 4
 collision_mask = 2
 script = ExtResource("1_loot_script")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.35, 0.35)
-texture = ExtResource("2_item_tex")
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1123336281]
+position = Vector2(-1.1920929e-07, 0)
+scale = Vector2(0.26874998, 0.1764535)
+texture = ExtResource("2_bafq7")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=676389184]
+position = Vector2(-1, 0)
 shape = SubResource("CircleShape2D_loot")
 
-[node name="ItemLabel" type="Label" parent="."]
+[node name="ItemLabel" type="Label" parent="." unique_id=536596247]
 offset_left = -60.0
 offset_top = -28.0
 offset_right = 60.0

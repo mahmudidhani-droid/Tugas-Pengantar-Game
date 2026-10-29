@@ -1,16 +1,16 @@
-[gd_scene load_steps=17 format=3]
+[gd_scene format=3 uid="uid://bei3hhr52f7kd"]
 
 [ext_resource type="PackedScene" path="res://scenes/player.tscn" id="1_player"]
-[ext_resource type="PackedScene" path="res://scenes/logic_switch.tscn" id="2_switch"]
+[ext_resource type="PackedScene" uid="uid://c6qhgr8jfqxse" path="res://scenes/logic_switch.tscn" id="2_switch"]
 [ext_resource type="PackedScene" path="res://scenes/logic_gate_door.tscn" id="3_door"]
 [ext_resource type="PackedScene" path="res://scenes/logic_enemy.tscn" id="4_enemy"]
-[ext_resource type="PackedScene" path="res://scenes/npc_mentor.tscn" id="5_npc"]
-[ext_resource type="Script" path="res://scripts/hud.gd" id="6_hud_script"]
-[ext_resource type="Texture2D" path="res://assets/Dungeon_of_Logic_Split_Sprites/01_Auto_Cutouts/11_In_Game_HUD/11_In_Game_HUD_sprite_002.png" id="7_ui_tex"]
+[ext_resource type="PackedScene" uid="uid://ciwyl52ola7bm" path="res://scenes/npc_mentor.tscn" id="5_npc"]
+[ext_resource type="Script" uid="uid://buturguluth1e" path="res://scripts/hud.gd" id="6_hud_script"]
+[ext_resource type="Texture2D" uid="uid://bqumsqwug4068" path="res://assets/Dungeon_of_Logic_Split_Sprites/01_Auto_Cutouts/11_In_Game_HUD/11_In_Game_HUD_sprite_002.png" id="7_ui_tex"]
 [ext_resource type="PackedScene" path="res://scenes/level_portal.tscn" id="8_portal"]
-[ext_resource type="Texture2D" path="res://assets/Dungeon_of_Logic_Split_Sprites/01_Auto_Cutouts/07_Dungeon_Room_Backgrounds/07_Dungeon_Room_Backgrounds_sprite_004.png" id="9_bg_tex"]
+[ext_resource type="Texture2D" uid="uid://dudnmxionn4f8" path="res://assets/Dungeon_of_Logic_Split_Sprites/01_Auto_Cutouts/07_Dungeon_Room_Backgrounds/07_Dungeon_Room_Backgrounds_sprite_004.png" id="9_bg_tex"]
 [ext_resource type="PackedScene" path="res://scenes/logic_trap.tscn" id="10_trap"]
-[ext_resource type="Texture2D" path="res://assets/Dungeon_of_Logic_Split_Sprites/01_Auto_Cutouts/06_Environment_Tileset/06_Environment_Tileset_sprite_010.png" id="11_wall_tiles"]
+[ext_resource type="Texture2D" uid="uid://bf38lqi7mem42" path="res://assets/Dungeon_of_Logic_Split_Sprites/01_Auto_Cutouts/06_Environment_Tileset/06_Environment_Tileset_sprite_010.png" id="11_wall_tiles"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wall_h"]
 size = Vector2(640, 24)
@@ -21,21 +21,21 @@ size = Vector2(24, 360)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_divider_left"]
 size = Vector2(252, 36)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_divider_right"]
-size = Vector2(252, 36)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_stone_wall"]
 atlas = ExtResource("11_wall_tiles")
 region = Rect2(32, 39, 28, 36)
 
-[node name="Level01" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_divider_right"]
+size = Vector2(252, 36)
 
-[node name="FloorBackground" type="ColorRect" parent="."]
+[node name="Level01" type="Node2D" unique_id=540246781]
+
+[node name="FloorBackground" type="ColorRect" parent="." unique_id=1032547147]
 offset_right = 640.0
 offset_bottom = 360.0
 color = Color(0.11, 0.13, 0.17, 1)
 
-[node name="DungeonRoomBG" type="TextureRect" parent="."]
+[node name="DungeonRoomBG" type="TextureRect" parent="." unique_id=346048399]
 modulate = Color(1, 1, 1, 0.45)
 offset_left = 24.0
 offset_top = 24.0
@@ -44,31 +44,30 @@ offset_bottom = 336.0
 texture = ExtResource("9_bg_tex")
 expand_mode = 1
 
-[node name="DungeonWalls" type="StaticBody2D" parent="."]
-collision_layer = 1
+[node name="DungeonWalls" type="StaticBody2D" parent="." unique_id=1894860985]
 collision_mask = 2
 
-[node name="TopWall" type="CollisionShape2D" parent="DungeonWalls"]
+[node name="TopWall" type="CollisionShape2D" parent="DungeonWalls" unique_id=903751828]
 position = Vector2(320, 12)
 shape = SubResource("RectangleShape2D_wall_h")
 
-[node name="BottomWall" type="CollisionShape2D" parent="DungeonWalls"]
+[node name="BottomWall" type="CollisionShape2D" parent="DungeonWalls" unique_id=1620555280]
 position = Vector2(320, 348)
 shape = SubResource("RectangleShape2D_wall_h")
 
-[node name="LeftWall" type="CollisionShape2D" parent="DungeonWalls"]
+[node name="LeftWall" type="CollisionShape2D" parent="DungeonWalls" unique_id=1849208175]
 position = Vector2(12, 180)
 shape = SubResource("RectangleShape2D_wall_v")
 
-[node name="RightWall" type="CollisionShape2D" parent="DungeonWalls"]
+[node name="RightWall" type="CollisionShape2D" parent="DungeonWalls" unique_id=659347824]
 position = Vector2(628, 180)
 shape = SubResource("RectangleShape2D_wall_v")
 
-[node name="MiddleWallLeft" type="CollisionShape2D" parent="DungeonWalls"]
+[node name="MiddleWallLeft" type="CollisionShape2D" parent="DungeonWalls" unique_id=1062497205]
 position = Vector2(174, 175)
 shape = SubResource("RectangleShape2D_divider_left")
 
-[node name="MiddleWallLeftVisual" type="TextureRect" parent="DungeonWalls/MiddleWallLeft"]
+[node name="MiddleWallLeftVisual" type="TextureRect" parent="DungeonWalls/MiddleWallLeft" unique_id=1964195825]
 offset_left = -126.0
 offset_top = -18.0
 offset_right = 126.0
@@ -76,11 +75,11 @@ offset_bottom = 18.0
 texture = SubResource("AtlasTexture_stone_wall")
 stretch_mode = 1
 
-[node name="MiddleWallRight" type="CollisionShape2D" parent="DungeonWalls"]
+[node name="MiddleWallRight" type="CollisionShape2D" parent="DungeonWalls" unique_id=1803323163]
 position = Vector2(466, 175)
 shape = SubResource("RectangleShape2D_divider_right")
 
-[node name="MiddleWallRightVisual" type="TextureRect" parent="DungeonWalls/MiddleWallRight"]
+[node name="MiddleWallRightVisual" type="TextureRect" parent="DungeonWalls/MiddleWallRight" unique_id=120483949]
 offset_left = -126.0
 offset_top = -18.0
 offset_right = 126.0
@@ -88,24 +87,23 @@ offset_bottom = 18.0
 texture = SubResource("AtlasTexture_stone_wall")
 stretch_mode = 1
 
-[node name="NPCMentor" parent="." instance=ExtResource("5_npc")]
+[node name="NPCMentor" parent="." unique_id=1734928731 instance=ExtResource("5_npc")]
 position = Vector2(85, 290)
 
-[node name="SwitchA" parent="." instance=ExtResource("2_switch")]
+[node name="SwitchA" parent="." unique_id=1143746408 instance=ExtResource("2_switch")]
 position = Vector2(200, 245)
 switch_name = "Saklar A"
 
-[node name="SwitchB" parent="." instance=ExtResource("2_switch")]
+[node name="SwitchB" parent="." unique_id=1223797885 instance=ExtResource("2_switch")]
 position = Vector2(440, 245)
 switch_name = "Saklar B"
 
-[node name="LogicGateDoor" parent="." node_paths=PackedStringArray("switch_a", "switch_b") instance=ExtResource("3_door")]
+[node name="LogicGateDoor" parent="." unique_id=1925650174 node_paths=PackedStringArray("switch_a", "switch_b") instance=ExtResource("3_door")]
 position = Vector2(320, 175)
-gate_type = 0
 switch_a = NodePath("../SwitchA")
 switch_b = NodePath("../SwitchB")
 
-[node name="DoorLabel" type="Label" parent="LogicGateDoor"]
+[node name="DoorLabel" type="Label" parent="LogicGateDoor" unique_id=372475244]
 offset_left = -42.0
 offset_top = -34.0
 offset_right = 42.0
@@ -114,50 +112,52 @@ theme_override_font_sizes/font_size = 8
 text = "GERBANG AND"
 horizontal_alignment = 1
 
-[node name="EnemySwitch1" parent="." instance=ExtResource("2_switch")]
+[node name="EnemySwitch1" parent="." unique_id=2006758851 instance=ExtResource("2_switch")]
 position = Vector2(120, 105)
 switch_name = "Input X"
 
-[node name="EnemySwitch2" parent="." instance=ExtResource("2_switch")]
+[node name="EnemySwitch2" parent="." unique_id=1264615182 instance=ExtResource("2_switch")]
 position = Vector2(430, 125)
 switch_name = "Input Y"
 
-[node name="TrapSwitchNOT" parent="." instance=ExtResource("2_switch")]
+[node name="TrapSwitchNOT" parent="." unique_id=953976300 instance=ExtResource("2_switch")]
 position = Vector2(480, 130)
 switch_name = "Saklar NOT"
 state_label_vertical_offset = 10.0
 
-[node name="LogicTrap" parent="." node_paths=PackedStringArray("control_switch") instance=ExtResource("10_trap")]
+[node name="LogicTrap" parent="." unique_id=711624997 node_paths=PackedStringArray("control_switch") instance=ExtResource("10_trap")]
 position = Vector2(530, 80)
 control_switch = NodePath("../TrapSwitchNOT")
 
-[node name="LevelPortal" parent="." instance=ExtResource("8_portal")]
+[node name="LevelPortal" parent="." unique_id=877081842 instance=ExtResource("8_portal")]
 position = Vector2(575, 55)
 
-[node name="LogicEnemy" parent="." node_paths=PackedStringArray("switch_a", "switch_b") instance=ExtResource("4_enemy")]
+[node name="LogicEnemy" parent="." unique_id=1823078064 node_paths=PackedStringArray("switch_a", "switch_b") instance=ExtResource("4_enemy")]
 position = Vector2(280, 95)
-shield_gate = 2
 switch_a = NodePath("../EnemySwitch1")
 switch_b = NodePath("../EnemySwitch2")
 
-[node name="Player" parent="." instance=ExtResource("1_player")]
+[node name="Player" parent="." unique_id=193752736 instance=ExtResource("1_player")]
 position = Vector2(320, 290)
 
-[node name="HUD" type="CanvasLayer" parent="."]
+[node name="HUD" type="CanvasLayer" parent="." unique_id=27471093]
 script = ExtResource("6_hud_script")
 
-[node name="TopPanel" type="Control" parent="HUD"]
+[node name="TopPanel" type="Control" parent="HUD" unique_id=945554323]
+layout_mode = 3
+anchors_preset = 0
 offset_left = 10.0
 offset_top = 8.0
 offset_right = 630.0
 offset_bottom = 36.0
 
-[node name="UIIcon" type="Sprite2D" parent="HUD/TopPanel"]
+[node name="UIIcon" type="Sprite2D" parent="HUD/TopPanel" unique_id=54016936]
 position = Vector2(16, 14)
 scale = Vector2(0.14, 0.14)
 texture = ExtResource("7_ui_tex")
 
-[node name="HPBar" type="ProgressBar" parent="HUD/TopPanel"]
+[node name="HPBar" type="ProgressBar" parent="HUD/TopPanel" unique_id=739658382]
+layout_mode = 0
 offset_left = 32.0
 offset_top = 6.0
 offset_right = 122.0
@@ -165,7 +165,8 @@ offset_bottom = 22.0
 value = 100.0
 show_percentage = false
 
-[node name="StatsLabel" type="Label" parent="HUD/TopPanel"]
+[node name="StatsLabel" type="Label" parent="HUD/TopPanel" unique_id=1905150386]
+layout_mode = 0
 offset_left = 132.0
 offset_top = 5.0
 offset_right = 610.0
@@ -173,13 +174,14 @@ offset_bottom = 24.0
 theme_override_font_sizes/font_size = 9
 text = "HP: 100/100  |  ATK: 25  |  Equipment: Belum ada"
 
-[node name="DialogPanel" type="Panel" parent="HUD"]
+[node name="DialogPanel" type="Panel" parent="HUD" unique_id=804250745]
 offset_left = 20.0
 offset_top = 305.0
 offset_right = 620.0
 offset_bottom = 352.0
 
-[node name="DialogLabel" type="Label" parent="HUD/DialogPanel"]
+[node name="DialogLabel" type="Label" parent="HUD/DialogPanel" unique_id=923166546]
+layout_mode = 0
 offset_left = 12.0
 offset_top = 6.0
 offset_right = 588.0

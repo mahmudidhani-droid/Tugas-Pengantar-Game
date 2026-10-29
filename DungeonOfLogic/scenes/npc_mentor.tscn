@@ -1,24 +1,25 @@
-[gd_scene load_steps=4 format=3]
+[gd_scene format=3 uid="uid://ciwyl52ola7bm"]
 
-[ext_resource type="Script" path="res://scripts/npc_mentor.gd" id="1_npc_script"]
-[ext_resource type="Texture2D" path="res://assets/Dungeon_of_Logic_Split_Sprites/01_Auto_Cutouts/01_Player_Character_Animations/01_Player_Character_Animations_sprite_025.png" id="2_npc_tex"]
+[ext_resource type="Script" uid="uid://bq4dy1n7acmmt" path="res://scripts/npc_mentor.gd" id="1_npc_script"]
+[ext_resource type="Texture2D" uid="uid://behg6pcnnvp12" path="res://assets/Dungeon_of_Logic_Split_Sprites/01_Auto_Cutouts/01_Player_Character_Animations/01_Player_Character_Animations_sprite_010.png" id="2_00amv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_npc"]
 radius = 20.0
 
-[node name="NPCMentor" type="Area2D"]
+[node name="NPCMentor" type="Area2D" unique_id=1389675643]
 collision_layer = 4
 collision_mask = 2
 script = ExtResource("1_npc_script")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1098421341]
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_npc_tex")
+texture = ExtResource("2_00amv")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1666001734]
+position = Vector2(-1, 2)
 shape = SubResource("CircleShape2D_npc")
 
-[node name="NameLabel" type="Label" parent="."]
+[node name="NameLabel" type="Label" parent="." unique_id=954788300]
 offset_left = -60.0
 offset_top = -34.0
 offset_right = 60.0

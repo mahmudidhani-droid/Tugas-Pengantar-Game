@@ -1,28 +1,30 @@
-[gd_scene load_steps=4 format=3]
+[gd_scene format=3 uid="uid://c6qhgr8jfqxse"]
 
-[ext_resource type="Script" path="res://scripts/logic_switch.gd" id="1_switch_script"]
-[ext_resource type="Texture2D" path="res://assets/Dungeon_of_Logic_Split_Sprites/01_Auto_Cutouts/08_Interactive_Objects/08_Interactive_Objects_sprite_001.png" id="2_switch_tex"]
+[ext_resource type="Script" uid="uid://dubpwr35rvisg" path="res://scripts/logic_switch.gd" id="1_switch_script"]
+[ext_resource type="Texture2D" uid="uid://c1onxh8v6racg" path="res://assets/Dungeon_of_Logic_Split_Sprites/01_Auto_Cutouts/08_Interactive_Objects/08_Interactive_Objects_sprite_011.png" id="2_cbxmx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_switch"]
 size = Vector2(28, 28)
 
-[node name="LogicSwitch" type="Area2D"]
+[node name="LogicSwitch" type="Area2D" unique_id=555374767]
 collision_layer = 4
 collision_mask = 2
 script = ExtResource("1_switch_script")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("2_switch_tex")
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1023368955]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1055626828]
 shape = SubResource("RectangleShape2D_switch")
 
-[node name="StateLabel" type="Label" parent="."]
+[node name="StateLabel" type="Label" parent="." unique_id=1608500411]
 offset_left = -45.0
-offset_top = -32.0
+offset_top = -25.0
 offset_right = 45.0
-offset_bottom = -9.0
+offset_bottom = -2.0
 theme_override_font_sizes/font_size = 10
 text = "Input: 0 (OFF)"
 horizontal_alignment = 1
+
+[node name="08InteractiveObjectsSprite011" type="Sprite2D" parent="." unique_id=332687801]
+scale = Vector2(0.4090909, 0.32352942)
+texture = ExtResource("2_cbxmx")
