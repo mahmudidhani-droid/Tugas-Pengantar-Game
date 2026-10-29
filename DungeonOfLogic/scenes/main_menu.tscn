@@ -1,0 +1,149 @@
+[gd_scene format=3 uid="uid://basa6dspumuoe"]
+
+[ext_resource type="Script" uid="uid://l7otstlhv0e" path="res://scripts/main_menu.gd" id="1_menu_script"]
+[ext_resource type="Texture2D" uid="uid://b5xs83dvvc75i" path="res://assets/Dungeon_of_Logic_Split_Sprites/01_Auto_Cutouts/12_Logic_Puzzle_UI/12_Logic_Puzzle_UI_sprite_024.png" id="3_puzzle_tex"]
+[ext_resource type="Texture2D" uid="uid://brrd0tmphdj7s" path="res://assets/Dungeon_of_Logic_Split_Sprites/01_Auto_Cutouts/01_Player_Character_Animations/01_Player_Character_Animations_sprite_002.png" id="4_player_tex"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_menu_panel"]
+bg_color = Color(0.035, 0.05, 0.075, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.15, 0.48, 0.62, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+content_margin_left = 18.0
+content_margin_top = 14.0
+content_margin_right = 18.0
+content_margin_bottom = 14.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_button"]
+bg_color = Color(0.08, 0.2, 0.29, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.18, 0.62, 0.76, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_button_hover"]
+bg_color = Color(0.12, 0.32, 0.43, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.35, 0.85, 1, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_button_pressed"]
+bg_color = Color(0.06, 0.15, 0.22, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.2, 0.72, 0.88, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_button_focus"]
+
+[node name="MainMenu" type="Control" unique_id=2112567720]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_menu_script")
+
+[node name="Background" type="ColorRect" parent="." unique_id=542117220]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.08, 0.1, 0.14, 1)
+
+[node name="HeroPreview" type="Sprite2D" parent="." unique_id=1344332954]
+position = Vector2(90, 205)
+scale = Vector2(1.8, 1.8)
+texture = ExtResource("4_player_tex")
+
+[node name="CenterPanel" type="Panel" parent="." unique_id=1422974416]
+layout_mode = 0
+offset_left = 145.0
+offset_top = 18.0
+offset_right = 495.0
+offset_bottom = 342.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_menu_panel")
+
+[node name="GatePreview" type="Sprite2D" parent="CenterPanel" unique_id=289985569]
+position = Vector2(175, 45)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("3_puzzle_tex")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterPanel" unique_id=1650104855]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 70.0
+offset_right = 325.0
+offset_bottom = 314.0
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="TitleLabel" type="Label" parent="CenterPanel/VBoxContainer" unique_id=827079182]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.4, 0.9, 1, 1)
+theme_override_font_sizes/font_size = 19
+text = "DUNGEON OF LOGIC"
+horizontal_alignment = 1
+
+[node name="SubtitleLabel" type="Label" parent="CenterPanel/VBoxContainer" unique_id=2138141382]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.85, 0.9, 1)
+theme_override_font_sizes/font_size = 9
+text = "2D Action / Puzzle RPG
+Eksplorasi Reruntuhan & Gerbang Logika"
+horizontal_alignment = 1
+
+[node name="StartButton" type="Button" parent="CenterPanel/VBoxContainer" unique_id=1910432991]
+custom_minimum_size = Vector2(230, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.98, 1, 1)
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_button")
+theme_override_styles/hover = SubResource("StyleBoxFlat_button_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_button_pressed")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_button_focus")
+text = "MULAI PETUALANGAN"
+
+[node name="QuitButton" type="Button" parent="CenterPanel/VBoxContainer" unique_id=1184064209]
+custom_minimum_size = Vector2(230, 36)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.86, 0.9, 1)
+theme_override_font_sizes/font_size = 11
+theme_override_styles/normal = SubResource("StyleBoxFlat_button")
+theme_override_styles/hover = SubResource("StyleBoxFlat_button_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_button_pressed")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_button_focus")
+text = "KELUAR GAME"
+
+[node name="ControlsInfo" type="Label" parent="CenterPanel/VBoxContainer" unique_id=842452414]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7, 0.7, 0.7, 1)
+theme_override_font_sizes/font_size = 8
+text = "[WASD / Panah] Bergerak
+[E / Space] Interaksi  |  [J / Klik] Serang"
+horizontal_alignment = 1

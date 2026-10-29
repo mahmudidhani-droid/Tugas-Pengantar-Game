@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/logic_trap.gd" id="1_trap_script"]
+[ext_resource type="Texture2D" path="res://assets/Dungeon_of_Logic_Split_Sprites/01_Auto_Cutouts/08_Interactive_Objects/08_Interactive_Objects_sprite_017.png" id="2_obj_tex"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_trap"]
+size = Vector2(36, 36)
+
+[node name="LogicTrap" type="Area2D"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_trap_script")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.857, 0.706)
+texture = ExtResource("2_obj_tex")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_trap")
+
+[node name="TrapLabel" type="Label" parent="."]
+offset_left = -52.0
+offset_top = 19.0
+offset_right = 52.0
+offset_bottom = 48.0
+theme_override_colors/font_color = Color(1, 0.5, 0.5, 1)
+theme_override_font_sizes/font_size = 7
+text = "JEBAKAN [NOT]
+Out: 1 (BAHAYA!)"
+horizontal_alignment = 1

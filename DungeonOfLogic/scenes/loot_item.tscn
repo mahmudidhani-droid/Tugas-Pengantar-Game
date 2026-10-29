@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/loot_item.gd" id="1_loot_script"]
+[ext_resource type="Texture2D" path="res://assets/Dungeon_of_Logic_Split_Sprites/01_Auto_Cutouts/05_Equipment_and_Accessories/05_Equipment_and_Accessories_sprite_001.png" id="2_item_tex"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_loot"]
+radius = 14.0
+
+[node name="LootItem" type="Area2D"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_loot_script")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("2_item_tex")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_loot")
+
+[node name="ItemLabel" type="Label" parent="."]
+offset_left = -60.0
+offset_top = -28.0
+offset_right = 60.0
+offset_bottom = -8.0
+theme_override_colors/font_color = Color(1, 0.9, 0.2, 1)
+theme_override_font_sizes/font_size = 10
+text = "[Ambil Loot]"
+horizontal_alignment = 1
