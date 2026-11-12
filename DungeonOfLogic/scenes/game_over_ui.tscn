@@ -1,0 +1,48 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/game_over_ui.gd" id="1_uiscript"]
+
+[node name="GameOverUI" type="CanvasLayer"]
+layer = 100
+script = ExtResource("1_uiscript")
+
+[node name="Panel" type="ColorRect" parent="."]
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.05, 0.05, 0.08, 0.88)
+
+[node name="TitleLabel" type="Label" parent="Panel"]
+offset_left = 276.0
+offset_top = 160.0
+offset_right = 876.0
+offset_bottom = 230.0
+theme_override_font_sizes/font_size = 48
+text = "VICTORY!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SubLabel" type="Label" parent="Panel"]
+offset_left = 276.0
+offset_top = 240.0
+offset_right = 876.0
+offset_bottom = 290.0
+theme_override_font_sizes/font_size = 20
+text = "Selamat! Anda berhasil memecahkan Dungeon of Logic!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RetryButton" type="Button" parent="Panel"]
+offset_left = 456.0
+offset_top = 340.0
+offset_right = 696.0
+offset_bottom = 395.0
+text = "MAIN LAGI (LEVEL 1)"
+
+[node name="QuitButton" type="Button" parent="Panel"]
+offset_left = 456.0
+offset_top = 415.0
+offset_right = 696.0
+offset_bottom = 470.0
+text = "KELUAR GAME"

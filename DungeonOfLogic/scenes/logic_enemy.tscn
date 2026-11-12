@@ -1,35 +1,35 @@
-[gd_scene load_steps=5 format=3]
+[gd_scene format=3 uid="uid://bal6k74gigon6"]
 
-[ext_resource type="Script" path="res://scripts/logic_enemy.gd" id="1_enemy_script"]
-[ext_resource type="Texture2D" path="res://assets/Dungeon_of_Logic_Split_Sprites/01_Auto_Cutouts/02_Enemies/02_Enemies_sprite_008.png" id="2_enemy_tex"]
-[ext_resource type="Texture2D" path="res://assets/Dungeon_of_Logic_Split_Sprites/01_Auto_Cutouts/09_Visual_Effects/09_Visual_Effects_sprite_006.png" id="3_vfx_tex"]
+[ext_resource type="Script" uid="uid://p5ywralxs1hh" path="res://scripts/logic_enemy.gd" id="1_enemy_script"]
+[ext_resource type="Texture2D" uid="uid://d0tjxqq8ddma" path="res://assets/Dungeon_of_Logic_Split_Sprites/01_Auto_Cutouts/02_Enemies/02_Enemies_sprite_008.png" id="2_enemy_tex"]
+[ext_resource type="Texture2D" uid="uid://bkre3caf73tqc" path="res://assets/Dungeon_of_Logic_Split_Sprites/01_Auto_Cutouts/09_Visual_Effects/09_Visual_Effects_sprite_006.png" id="3_vfx_tex"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_enemy"]
 radius = 14.0
 
-[node name="LogicEnemy" type="CharacterBody2D"]
+[node name="LogicEnemy" type="CharacterBody2D" unique_id=1345621408]
 collision_layer = 8
 collision_mask = 3
 script = ExtResource("1_enemy_script")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.45, 0.45)
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2134982024]
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("2_enemy_tex")
 
-[node name="ShieldVisual" type="Sprite2D" parent="."]
+[node name="ShieldVisual" type="Sprite2D" parent="." unique_id=1781723046]
 modulate = Color(0.2, 0.7, 1, 0.65)
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.32, 0.32)
 texture = ExtResource("3_vfx_tex")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=488447970]
 shape = SubResource("CircleShape2D_enemy")
 
-[node name="StatusLabel" type="Label" parent="."]
-offset_left = -75.0
-offset_top = -48.0
-offset_right = 75.0
-offset_bottom = -16.0
-theme_override_font_sizes/font_size = 10
+[node name="StatusLabel" type="Label" parent="." unique_id=733392500]
+offset_left = -52.0
+offset_top = -29.0
+offset_right = 54.0
+offset_bottom = -3.0
+theme_override_font_sizes/font_size = 6
 text = "[PERISAI XOR: AKTIF]
 HP: 50/50"
 horizontal_alignment = 1

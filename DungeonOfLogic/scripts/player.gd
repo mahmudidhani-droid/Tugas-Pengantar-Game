@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name Player
 
 signal stats_changed(hp: int, max_hp: int, atk: int, inventory: Array[String])
 signal show_message(title: String, text: String)
@@ -31,6 +32,11 @@ var anim_index: int = 0
 @onready var attack_zone: Area2D = $AttackZone
 @onready var attack_visual: Sprite2D = $AttackZone/AttackVFX
 @onready var sprite: Sprite2D = $Sprite2D
+
+static func reset_progress() -> void:
+	saved_atk = 25
+	saved_hp = 100
+	saved_inventory.clear()
 
 func _ready() -> void:
 	add_to_group("player")

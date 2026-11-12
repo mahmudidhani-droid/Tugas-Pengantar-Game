@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=3]
 
 [ext_resource type="Script" path="res://scripts/logic_gate_door.gd" id="1_door_script"]
-[ext_resource type="Texture2D" path="res://assets/Dungeon_of_Logic_Split_Sprites/01_Auto_Cutouts/08_Interactive_Objects/08_Interactive_Objects_sprite_008.png" id="2_door_tex"]
+[ext_resource type="Texture2D" path="res://assets/Dungeon_of_Logic_Split_Sprites/01_Auto_Cutouts/14_Provided_AssetPack/04_Pintu_Gerbang/04_Pintu_Gerbang_sprite_002.png" id="2_door_tex"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_door"]
-size = Vector2(36, 36)
+size = Vector2(36, 42)
 
 [node name="LogicGateDoor" type="StaticBody2D"]
 collision_layer = 1
@@ -12,7 +12,7 @@ collision_mask = 2
 script = ExtResource("1_door_script")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.9, 0.692)
+scale = Vector2(0.66, 0.58)
 texture = ExtResource("2_door_tex")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

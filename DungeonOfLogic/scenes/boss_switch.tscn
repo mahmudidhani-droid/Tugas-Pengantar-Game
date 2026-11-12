@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/boss_switch.gd" id="1_swscript"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sw"]
+size = Vector2(40, 40)
+
+[node name="BossSwitch" type="Area2D" groups=["interactable", "switch"]]
+script = ExtResource("1_swscript")
+
+[node name="SwitchVisual" type="ColorRect" parent="."]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+color = Color(0.9, 0.2, 0.2, 1)
+
+[node name="Label" type="Label" parent="."]
+offset_left = -35.0
+offset_top = -45.0
+offset_right = 35.0
+offset_bottom = -22.0
+text = "INPUT: 0"
+horizontal_alignment = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_sw")

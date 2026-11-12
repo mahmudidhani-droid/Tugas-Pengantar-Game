@@ -1,22 +1,18 @@
 extends Control
 
-@onready var start_btn: Button = $CenterPanel/VBoxContainer/StartButton
-@onready var quit_btn: Button = $CenterPanel/VBoxContainer/QuitButton
+@export_file("*.tscn") var start_level_path: String = "res://scenes/level_01.tscn"
+
+@onready var btn_start: Button = $BtnStart
 
 func _ready() -> void:
-	start_btn.pressed.connect(_on_start_pressed)
-	quit_btn.pressed.connect(_on_quit_pressed)
-	start_btn.grab_focus()
+	btn_start.grab_focus()
 
-func _on_start_pressed() -> void:
-	var player_script = load("res://scripts/player.gd")
-	if player_script:
-		player_script.saved_hp = 100
-		player_script.saved_atk = 25
-		player_script.saved_inventory.clear()
-	var error := get_tree().change_scene_to_file("res://scenes/level_01.tscn")
-	if error != OK:
-		push_error("Gagal memuat level pertama: %s" % error)
+func _on_btn_start_pressed() -> void:
+	if ResourceLoader.exists(start_level_path):
+		Player.reset_progress()
+		get_tree().change_scene_to_file(start_level_path)
+	else:
+		print("Scene level tujuan tidak ditemukan di path: ", start_level_path)
 
-func _on_quit_pressed() -> void:
+func _on_btn_exit_pressed() -> void:
 	get_tree().quit()

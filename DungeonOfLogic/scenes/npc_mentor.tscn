@@ -1,10 +1,13 @@
 [gd_scene format=3 uid="uid://ciwyl52ola7bm"]
 
 [ext_resource type="Script" uid="uid://bq4dy1n7acmmt" path="res://scripts/npc_mentor.gd" id="1_npc_script"]
-[ext_resource type="Texture2D" uid="uid://behg6pcnnvp12" path="res://assets/Dungeon_of_Logic_Split_Sprites/01_Auto_Cutouts/01_Player_Character_Animations/01_Player_Character_Animations_sprite_010.png" id="2_00amv"]
+[ext_resource type="Texture2D" path="res://assets/Dungeon_of_Logic_Split_Sprites/01_Auto_Cutouts/01_Player_Character_Animations/profesor_logic.png" id="2_00amv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_npc"]
 radius = 20.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_npc_solid"]
+radius = 12.0
 
 [node name="NPCMentor" type="Area2D" unique_id=1389675643]
 collision_layer = 4
@@ -12,19 +15,27 @@ collision_mask = 2
 script = ExtResource("1_npc_script")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1098421341]
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.21, 0.21)
 texture = ExtResource("2_00amv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1666001734]
 position = Vector2(-1, 2)
 shape = SubResource("CircleShape2D_npc")
 
+[node name="SolidBody" type="StaticBody2D" parent="."]
+position = Vector2(0, 5)
+collision_layer = 1
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SolidBody"]
+shape = SubResource("CircleShape2D_npc_solid")
+
 [node name="NameLabel" type="Label" parent="." unique_id=954788300]
-offset_left = -60.0
-offset_top = -34.0
-offset_right = 60.0
-offset_bottom = -12.0
+offset_left = -55.0
+offset_top = -46.0
+offset_right = 55.0
+offset_bottom = -29.0
 theme_override_colors/font_color = Color(0.4, 0.9, 1, 1)
-theme_override_font_sizes/font_size = 10
+theme_override_font_sizes/font_size = 9
 text = "Profesor Logic [E]"
 horizontal_alignment = 1
